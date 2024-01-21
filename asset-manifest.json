@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/AdoptionService/static/css/main.49b0e80b.css",
+    "main.js": "/AdoptionService/static/js/main.08310ae6.js",
+    "static/media/Ellipse.png": "/AdoptionService/static/media/Ellipse.207a807b1ff930e60415.png",
+    "static/media/dogcat.png": "/AdoptionService/static/media/dogcat.395137e293c06e76ca46.png",
+    "static/media/dog image.png": "/AdoptionService/static/media/dog image.b775155e60e259dc3e5f.png",
+    "index.html": "/AdoptionService/index.html",
+    "main.49b0e80b.css.map": "/AdoptionService/static/css/main.49b0e80b.css.map",
+    "main.08310ae6.js.map": "/AdoptionService/static/js/main.08310ae6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49b0e80b.css",
+    "static/js/main.08310ae6.js"
+  ]
+}
