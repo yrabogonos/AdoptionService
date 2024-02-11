@@ -3,7 +3,10 @@ import Navbar from './components/molecules/Navbar';
 import MainBanner from './components/organisms/MainBanner';
 import AboutSection from './components/organisms/About';
 import AdoptionSection from './components/organisms/AdoptionSection';
-
+import PetOfTheWeek from './components/organisms/Petoftheweek';
+import weekpet from '../src/assets/img/petoftheweek.png';
+import Stories from './components/organisms/Stories';
+import Footer from './components/organisms/Footer';
 
 
 
@@ -14,6 +17,9 @@ function App() {
       <MainBanner />
       <AboutSection />
       <AdoptionSection />
+      <PetOfTheWeek imageLink={weekpet} />
+      <Stories />
+      <Footer /> 
     </div>
   );
 }

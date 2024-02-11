@@ -8,10 +8,14 @@ module.exports = {
     extend: { 
       colors:{
        thOrange: '#FF8B44',
+       dark: '#404040',
+       darkTitle: '#46311F',
+       textOrange: '#FF9826',
       },
       fontSize: {
         'bannerTitle': '60px', 
         'base': '18px',
+        'normalTitle': '24px'
         
       },
       backgroundImage: {

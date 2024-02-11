@@ -27,7 +27,7 @@ function AboutSection<FC>(){
                 {
                     bottom: '80%',
                     zIndex: 10,
-                    right: '-50px'
+                    right: '-57px'
                 }
             }>
                 <img className="w-3/4 h-3/4" src={paw} alt="paw" />
