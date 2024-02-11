@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/AdoptionService/static/css/main.49b0e80b.css",
-    "main.js": "/AdoptionService/static/js/main.08310ae6.js",
+    "main.css": "/AdoptionService/static/css/main.ae91a92d.css",
+    "main.js": "/AdoptionService/static/js/main.a7805ea7.js",
     "static/media/Ellipse.png": "/AdoptionService/static/media/Ellipse.207a807b1ff930e60415.png",
     "static/media/dogcat.png": "/AdoptionService/static/media/dogcat.395137e293c06e76ca46.png",
+    "static/media/love1.png": "/AdoptionService/static/media/love1.cff46eb3448e9de46985.png",
+    "static/media/love2.png": "/AdoptionService/static/media/love2.e7abf66e5cc230a791d3.png",
     "static/media/dog image.png": "/AdoptionService/static/media/dog image.b775155e60e259dc3e5f.png",
+    "static/media/petoftheweek.png": "/AdoptionService/static/media/petoftheweek.d926b2f72ce3671a4692.png",
     "index.html": "/AdoptionService/index.html",
-    "main.49b0e80b.css.map": "/AdoptionService/static/css/main.49b0e80b.css.map",
-    "main.08310ae6.js.map": "/AdoptionService/static/js/main.08310ae6.js.map"
+    "main.ae91a92d.css.map": "/AdoptionService/static/css/main.ae91a92d.css.map",
+    "main.a7805ea7.js.map": "/AdoptionService/static/js/main.a7805ea7.js.map"
   },
   "entrypoints": [
-    "static/css/main.49b0e80b.css",
-    "static/js/main.08310ae6.js"
+    "static/css/main.ae91a92d.css",
+    "static/js/main.a7805ea7.js"
   ]
 }
