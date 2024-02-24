@@ -13,7 +13,7 @@ function MainBanner<FC>(){
                 borderBottomLeftRadius: '50% 30px',
                 borderBottomRightRadius: '50% 100px',
             }}>
-                <Navbar />
+                <Navbar/>
                 <div className="flex justify-around mt-12">
                     <div className="flex flex-col basis-3/6">
                         <h2 className="text-bannerTitle text-white">Save Your Next</h2>
