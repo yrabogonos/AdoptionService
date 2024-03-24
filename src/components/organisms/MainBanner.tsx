@@ -1,18 +1,22 @@
-import React, {FC} from "react";
+import React, {FC, useEffect, useState} from "react";
 import bannerDog from '../../assets/img/dog image.png';
 import vector from '../../assets/img/Vector.png';
 import Navbar from "../molecules/Navbar";
 import BannerButton from "../atoms/BannerButton";
 
 
-function MainBanner<FC>(){
 
+const MainBanner: FC = () =>{
+    
+  
     return(
         <div className="relative">
+          
             <div className="bg-gradient-to-r from-orange-500 to-yellow-500 pl-base pr-base mb-24 z-[1]  overflow-hidden" style={{
                 borderBottomLeftRadius: '50% 30px',
                 borderBottomRightRadius: '50% 100px',
             }}>
+             
                 <Navbar/>
                 <div className="flex justify-around mt-12">
                     <div className="flex flex-col basis-3/6">

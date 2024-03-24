@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { reqRegister } from "../../async/UserRequests";
 import {TypeRegisterData} from '../../Types';
 import {CustomToaster} from '../../CustomToaster';
+import { Link } from "react-router-dom";
+
 
 
 
@@ -54,38 +56,39 @@ const RegistrationForm: FC = () => {
     };
 
         
-   
 
     return(
-        <div className="pl-base pr-base mt-12 mb-24">
+      
+        <div className="min-h-screen flex items-center justify-center w-full dark:bg-gray-950">
             <ToastContainer autoClose={1500}/>
-            <h3 className="text-[34px] font-bold">Registration</h3>
-            <div className="mt-12 flex flex-col items-center">
-                <div className="flex flex-col ">
-                    <label className="block mb-2 text-md font-medium text-gray-900 dark:text-white">Full name</label>
-                    <input name="fullname" value={formData.fullname} required type="text" id="default-input" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={handleChange} />
-                </div>
-                <div className="flex flex-col ">
-                    <label className="block mb-2 text-md font-medium text-gray-900 dark:text-white">Email</label>
-                    <input name="email" value={formData.email} required type="email" id="default-input" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={ handleChange}  />
-                </div>
-                <div className="flex flex-col mb-6 ">
-                    <label className="block mb-2 text-md font-medium text-gray-900 dark:text-white">Password</label>
-                    <input name="password" value={formData.password} required type="password" id="default-input" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={handleChange} />
-                </div>
-
-                <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={()=>handleSubmit(formData)}>
-                Create Account
-                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                </svg>
-                </button>
-
-
-
-            </div>
-           
+        	<div className=" min-w-[440px] bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md">
+        		<h1 className="text-2xl font-bold text-center mb-4 dark:text-gray-200">New here? Register!</h1>
+        		
+                    <div className="mb-4">
+        				<label htmlFor="fullname" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
+        				<input onChange={handleChange} type="text" id="fullname" name="fullname" value={formData.fullname} className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="John Smith" required />
+        			</div>
+        			<div className="mb-4">
+        				<label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+        				<input name="email" onChange={handleChange} type="email" value={formData.email} id="email" className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="your@email.com" required />
+        			</div>
+        			<div className="mb-4">
+        				<label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Password</label>
+        				<input name="password" onChange={handleChange} type="password" value={formData.password} id="password" className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter your password" required />
+        				
+        			</div>
+        			<div className="flex items-center justify-between mb-8">
+        				<div className="flex items-center">
+        					<input type="checkbox" id="remember" className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 focus:outline-none" checked />
+        					<label htmlFor="remember" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">Remember me</label>
+        				</div>
+        				<Link to="/login" className="text-xs text-indigo-500 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Have account?</Link>
+        			</div>
+        			<button className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={()=>handleSubmit(formData)}>Create account</button>
+        	
+        	</div>
         </div>
+   
     );
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/molecules/Navbar';
 import MainBanner from './components/organisms/MainBanner';
 import AboutSection from './components/organisms/About';
@@ -11,13 +11,40 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import RegistrationForm from './components/organisms/RegistrationForm';
 import EmailConfirmation from './components/organisms/EmailConfirmation';
 import EmailConfirmed from './components/organisms/EmailConfirmed';
+import Login from './components/organisms/Login';
+import { getUser } from './async/UserRequests';
+import { UserStore } from './Stores/userStore';
 
 
 
+type User = {
+  fullname: string,
+  email: string,
+  avatar: string,
+}
 
 function App() {
+
+  
+  
+
+  const { user, fetchUser } = UserStore();
+  const token = localStorage.getItem("jwt");
+  
+  
+  useEffect(() => {
+    
+    if (token) {
+      fetchUser(token); 
+      
+    }
+
+  }, [token]); 
+
+ 
   return (
     <div className="App overflow-x-hidden">
+      
        <BrowserRouter basename="/AdoptionService">
         <Routes>
           <Route path='/' element={ 
@@ -50,7 +77,7 @@ function App() {
                   background: 'linear-gradient(91.65deg, #FF8845 9.74%, #FFBF28 104.37%)'
                 }
               }>
-              <Navbar />
+              <Navbar  />
               </div>
               <EmailConfirmation />
             
@@ -71,11 +98,26 @@ function App() {
             </>
           }></Route> 
 
+          <Route path='/login' element={ 
+            <>
+              <div className='pl-base pr-base pr-b' style={
+                {
+                  background: 'linear-gradient(91.65deg, #FF8845 9.74%, #FFBF28 104.37%)'
+                }
+              }>
+              <Navbar />
+              </div>
+              <Login />
+            
+            </>
+          }></Route> 
+
 
         </Routes>
        </BrowserRouter>
       
       <Footer /> 
+    
     </div>
   );
 }

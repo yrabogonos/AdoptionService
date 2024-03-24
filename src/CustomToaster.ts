@@ -40,3 +40,41 @@ export const CustomToaster = async (request:Promise<any>)=>{
         }
     )    
 }
+
+export const CustomLoginToaster = async (request:Promise<any>)=>{
+  return toast.promise(
+      request,
+      {
+        pending: {
+          render(){
+            return "Proccessing..."
+          },
+      
+        },
+        success: {
+          render(succ: any){
+              console.log('!', succ.data)
+            if(succ.data.statusText === 'OK'){
+              localStorage.setItem("jwt", succ.data.data.token);
+              
+              return `Success !`
+             
+            }
+            
+          },
+          theme: "colored"
+        },
+        error: {
+          render(err: any){
+     
+            return `${err.data.response.data.msg}`
+
+          }
+          
+          ,
+          theme: "colored",
+             
+        }
+      }
+  )    
+}

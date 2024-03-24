@@ -5,11 +5,25 @@ type TypeRegisterData = {
     email: string,
     password: string
 }
+type TypeLoginData = Omit<TypeRegisterData, 'fullname'>;
 
 export const reqRegister = async (registerData:TypeRegisterData) => {
    
     return new Promise((resolve, reject) =>
         axios.post('http://localhost:4444/auth/register', registerData)
+        .then((response) => {
+           
+            setTimeout(()=>{
+                resolve(response);
+            }, 1000)
+        })
+        .catch((err) =>{reject(err)})
+     );
+}
+export const reqLogin = async (loginData:TypeLoginData) => {
+   
+    return new Promise((resolve, reject) =>
+        axios.post('http://localhost:4444/auth/login', loginData)
         .then((response) => {
            
             setTimeout(()=>{
